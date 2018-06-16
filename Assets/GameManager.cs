@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour {
 
 	public GameObject deathScreen;
+	public GameObject winText;
 	public Transform spawnPoint;
 	public GameObject player;
 
@@ -26,5 +27,9 @@ public class GameManager : MonoBehaviour {
 	public void Respawn() {
 		player.transform.position = spawnPoint.transform.position;
 		deathScreen.SetActive(false);
+	}
+
+	public void Won() {
+		winText.SetActive(true);
 	}
 }

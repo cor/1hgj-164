@@ -2,10 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Portal : MonoBehaviour {
-
-
-	public GameObject bluePortal;
+public class WinTrigger : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
@@ -18,8 +15,7 @@ public class Portal : MonoBehaviour {
 	}
 	void OnTriggerEnter2D(Collider2D collider) {
 		if(collider.tag == "Player") {
-			collider.gameObject.transform.position = new Vector2(bluePortal.transform.position.x + 0.5f, bluePortal.transform.position.y);
-			collider.gameObject.GetComponent<PlayerController>().SwitchVelocity();
+			GameObject.Find("GameManager").GetComponent<GameManager>().Won();
 		}
 	}
 }

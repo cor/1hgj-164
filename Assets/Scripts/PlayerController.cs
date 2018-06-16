@@ -19,4 +19,10 @@ public class PlayerController : MonoBehaviour {
 
 		rb.AddForce(new Vector2(horizontalInput * moveSpeed, 0));
 	}
+
+	public void SwitchVelocity() {
+		Rigidbody2D rb = GetComponent<Rigidbody2D>();
+		rb.velocity = new Vector2 (-rb.velocity.y, rb.velocity.x);
+
+	}
 }
